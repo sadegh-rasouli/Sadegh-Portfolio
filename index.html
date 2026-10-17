@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمد صادق رسولی | Mohammad Sadegh Rasouli — Web Developer</title>
+  <meta name="description"
+    content="Mohammad Sadegh Rasouli — Web Developer & Computer Engineering Student. Responsive, fast, business-focused websites. اصفهان">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop stop-color='%236366F1'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='40' height='40' rx='10' fill='url(%23g)'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='monospace' font-weight='700' font-size='16' fill='%230B0E14'%3EMR%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0B0E14">
+
+  <!-- Open Graph / Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohammad Sadegh Rasouli — Web Developer">
+  <meta property="og:description" content="طراحی و توسعه وبسایت ریسپانسیو و سئومحور برای کسبوکارها — اصفهان">
+  <meta property="og:url" content="https://sadegh-rasouli.github.io/">
+  <meta property="og:image" content="https://sadegh-rasouli.github.io/images/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Main JavaScript File (Deferred) -->
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Ambient Glow Background -->
+  <div class="glow"></div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav">
+      <a href="#" class="logo"><span class="lm">MR</span>محمد صادق رسولی</a>
+      <nav class="nl">
+        <a href="#about">درباره من</a>
+        <a href="#skills">مهارت ها</a>
+        <a href="#projects">نمونه کارها</a>
+        <a href="#services">خدمات</a>
+        <a href="#process">روند کار</a>
+        <a href="#resume">رزومه</a>
+        <a href="#contact">تماس</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#contact" class="btn bp sm">شروع همکاری</a>
+        <button id="navToggle" class="nav-toggle" aria-label="منو">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileOverlay" class="mobile-nav-overlay"></div>
+  <aside id="mobileDrawer" class="mobile-drawer" aria-label="منوی موبایل">
+    <div class="mobile-drawer-header">
+      <div class="logo"><span class="lm">MR</span>منوی دسترسی</div>
+      <button id="drawerClose" class="mobile-drawer-close" aria-label="بستن منو">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#about">درباره من <span>›</span></a>
+      <a href="#skills">مهارت ها <span>›</span></a>
+      <a href="#projects">نمونه کارها <span>›</span></a>
+      <a href="#services">خدمات <span>›</span></a>
+      <a href="#process">روند کار <span>›</span></a>
+      <a href="#resume">رزومه <span>›</span></a>
+      <a href="#contact">تماس <span>›</span></a>
+    </nav>
+    <div class="mobile-nav-cta">
+      <a href="#contact" class="btn bp">شروع همکاری</a>
+      <a href="https://t.me/Sadegh_rasoulii" target="_blank" rel="noopener" class="btn b-tg">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+        </svg>
+        پیام در تلگرام
+      </a>
+      <a href="https://wa.me/989300352533" target="_blank" rel="noopener" class="btn b-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.78C8.86 6.78 8.64 6.85 8.44 7.07C8.24 7.29 7.68 7.81 7.68 8.87C7.68 9.93 8.45 10.96 8.56 11.11C8.67 11.26 10.08 13.43 12.24 14.36C12.75 14.58 13.15 14.72 13.46 14.82C13.98 14.98 14.45 14.96 14.82 14.9C15.24 14.84 16.11 14.38 16.29 13.87C16.47 13.36 16.47 12.92 16.41 12.83C16.35 12.74 16.2 12.69 15.98 12.58C15.76 12.47 14.69 11.94 14.49 11.87C14.29 11.8 14.14 11.76 14 11.98C13.86 12.2 13.45 12.69 13.33 12.83C13.21 12.97 13.09 13 12.87 12.89C12.65 12.78 11.94 12.54 11.1 11.79C10.45 11.21 10.01 10.49 9.89 10.28C9.77 10.06 9.88 9.94 9.99 9.83C10.09 9.73 10.21 9.57 10.32 9.44C10.43 9.31 10.47 9.22 10.54 9.08C10.61 8.94 10.58 8.82 10.53 8.71C10.48 8.6 10.07 7.59 9.9 7.18C9.73 6.78 9.56 6.83 9.43 6.82C9.31 6.82 9.17 6.78 9.04 6.78Z"/>
+        </svg>
+        پیام در واتساپ
+      </a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hg">
+      <div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          آماده پذیرش پروژه‌های جدید
+        </div>
+        <div class="tag">sadegh.buildWebsites()</div>
+        <h1>سلام، من محمدصادق هستم<br><span class="gt">طراح و توسعه‌دهنده وب</span></h1>
+        <p class="lede">سایت‌هایی زیبا، فوق‌العاده سریع و ریسپانسیو می‌سازم که به کسب‌وکارتان کمک می‌کنند بهتر دیده شوند و مشتری جذب کنند. از طراحی رابط کاربری مدرن تا کدنویسی بهینه و راه‌اندازی کامل.</p>
+        
+        <div class="cta">
+          <a href="#contact" class="btn bp">سفارش پروژه</a>
+          <a href="#projects" class="btn bo">دیدن نمونه کارها</a>
+          <a href="https://t.me/Sadegh_rasoulii" target="_blank" rel="noopener" class="btn b-tg">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+            </svg>
+            تلگرام
+          </a>
+          <a href="https://wa.me/989300352533" target="_blank" rel="noopener" class="btn b-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.78C8.86 6.78 8.64 6.85 8.44 7.07C8.24 7.29 7.68 7.81 7.68 8.87C7.68 9.93 8.45 10.96 8.56 11.11C8.67 11.26 10.08 13.43 12.24 14.36C12.75 14.58 13.15 14.72 13.46 14.82C13.98 14.98 14.45 14.96 14.82 14.9C15.24 14.84 16.11 14.38 16.29 13.87C16.47 13.36 16.47 12.92 16.41 12.83C16.35 12.74 16.2 12.69 15.98 12.58C15.76 12.47 14.69 11.94 14.49 11.87C14.29 11.8 14.14 11.76 14 11.98C13.86 12.2 13.45 12.69 13.33 12.83C13.21 12.97 13.09 13 12.87 12.89C12.65 12.78 11.94 12.54 11.1 11.79C10.45 11.21 10.01 10.49 9.89 10.28C9.77 10.06 9.88 9.94 9.99 9.83C10.09 9.73 10.21 9.57 10.32 9.44C10.43 9.31 10.47 9.22 10.54 9.08C10.61 8.94 10.58 8.82 10.53 8.71C10.48 8.6 10.07 7.59 9.9 7.18C9.73 6.78 9.56 6.83 9.43 6.82C9.31 6.82 9.17 6.78 9.04 6.78Z"/>
+            </svg>
+            واتساپ
+          </a>
+        </div>
+
+        <div class="st">
+          <div><b>4</b><span>پروژه آنلاین</span></div>
+          <div><b>10+</b><span>تکنولوژی</span></div>
+          <div><b>24h</b><span>پاسخگویی</span></div>
+        </div>
+      </div>
+
+      <div class="scene" data-tilt="8">
+        <div class="ed">
+          <div class="eb2">
+            <i style="background:#FF5F56"></i>
+            <i style="background:#FFBD2E"></i>
+            <i style="background:#27C93F"></i>
+            <span>developer.js</span>
+          </div>
+          <pre class="ec" id="code"></pre>
+        </div>
+        <div class="cube">
+          <div>HTML</div>
+          <div>CSS</div>
+          <div>JS</div>
+          <div>React</div>
+          <div>Node</div>
+          <div>Py</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="rv">
+    <div class="wrap">
+      <div class="sh">
+        <div class="eb"><i></i>درباره من</div>
+        <h2>توسعه‌دهنده‌ای که به جزئیات اهمیت می‌دهد</h2>
+      </div>
+      <div class="abg">
+        <div class="card" data-tilt="6" style="text-align:center">
+          <div class="av">
+            <img src="images/me.jpg" alt="Mohammad Sadegh Rasouli" onerror="this.remove()">
+            MR
+          </div>
+          <h3>محمد صادق رسولی</h3>
+          <p class="lede" style="margin:4px auto 14px;font-size:14px">دانشجوی مهندسی کامپیوتر · اصفهان</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <a class="btn bo sm" href="https://github.com/sadegh-rasouli" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+              GitHub
+            </a>
+            <a class="btn bo sm" href="https://www.linkedin.com/in/mohammad-sadegh-rasouli-dev/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a class="btn b-tg sm" href="https://t.me/Sadegh_rasoulii" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+              </svg>
+              Telegram
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="lede" style="max-width:none">دانشجوی مهندسی کامپیوتر با تمرکز روی توسعه وب و مهندسی نرم‌افزار هستم و هدفم ساخت محصولات دیجیتالی است که نیازهای واقعی کسب‌وکارها را حل کنند. کدهایی که می‌نویسم ریسپانسیو، تمیز، استاندارد و با قابلیت نگهداری بالا هستند و همواره سعی می‌کنم با پروژه‌های کاربردی جدیدترین متدهای وب را به کار بگیرم.</p>
+          <ul class="ck">
+            <li>رابط کاربری مدرن، متناسب با هویت برند و سلیقه کارفرما</li>
+            <li>سایت شرکتی، پلتفرم‌های B2B، کاتالوگ محصول و فرم‌های استعلام</li>
+            <li>رعایت کامل سئوی پایه (Technical SEO)، دسترس‌پذیری و بهینه‌سازی سرعت</li>
+            <li>همراهی از مرحله تحلیل نیاز تا طراحی، پیاده‌سازی و پشتیبانی فنی</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="rv">
+    <div class="wrap">
+      <div class="sh">
+        <div class="eb"><i></i>مهارت ها</div>
+        <h2>ابزارهایی که با آن‌ها خلق می‌کنم</h2>
+      </div>
+      <div class="sg">
+        <div class="card" data-tilt="6">
+          <h3>Web Development</h3>
+          <div class="chips">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Responsive Design</span>
+            <span>UI Implementation</span>
+          </div>
+        </div>
+        <div class="card" data-tilt="6">
+          <h3>Programming</h3>
+          <div class="chips">
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>C / C++</span>
+          </div>
+        </div>
+        <div class="card" data-tilt="6">
+          <h3>Backend & Database</h3>
+          <div class="chips">
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>REST API</span>
+            <span>MongoDB</span>
+            <span>Mongoose</span>
+          </div>
+        </div>
+        <div class="card" data-tilt="6">
+          <h3>SEO & Quality</h3>
+          <div class="chips">
+            <span>On-Page SEO</span>
+            <span>Semantic HTML</span>
+            <span>Accessibility</span>
+            <span>Metadata</span>
+            <span>Performance</span>
+          </div>
+        </div>
+        <div class="card" data-tilt="6">
+          <h3>Tools</h3>
+          <div class="chips">
+            <span>Git & GitHub</span>
+            <span>VS Code</span>
+            <span>Vite</span>
+            <span>npm</span>
+          </div>
+        </div>
+        <div class="card" data-tilt="6">
+          <h3>Focus</h3>
+          <div class="chips">
+            <span>Business Websites</span>
+            <span>Product Catalogs</span>
+            <span>Inquiry Forms</span>
+            <span>Maintainable Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="rv">
+    <div class="wrap">
+      <div class="sh">
+        <div class="eb"><i></i>نمونه کارها</div>
+        <h2>پروژه‌هایی که ساخته‌ام</h2>
+        <p class="lede">پیش‌نمایش‌ها زنده هستند و مستقیماً از وبسایت‌ها لود می‌شوند.</p>
+      </div>
+      <div class="pg">
+        <div class="card pc" data-tilt="5">
+          <div class="bar">
+            <i style="background:#FF5F56"></i>
+            <i style="background:#FFBD2E"></i>
+            <i style="background:#27C93F"></i>
+            <span>nova-b2b-platform</span>
+          </div>
+          <div class="pv">
+            <iframe loading="lazy" title="NOVA preview" sandbox="allow-scripts allow-same-origin"
+              data-src="https://sadegh-rasouli.github.io/nova-b2b-platform/"></iframe>
+          </div>
+          <div class="pi">
+            <div class="chips"><span>B2B</span><span>SEO</span><span>Responsive</span></div>
+            <h3>NOVA — پلتفرم B2B مواد پلیمری</h3>
+            <p>سایت تأمین‌کننده گرانول‌های پلیمری و مواد صنعتی، با معماری سئومحور و معرفی جامع محصولات برای مشتریان صنعتی.</p>
+            <div class="pl">
+              <a class="btn bp sm" href="https://sadegh-rasouli.github.io/nova-b2b-platform/" target="_blank"
+                rel="noopener">مشاهده سایت ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pc" data-tilt="5">
+          <div class="bar">
+            <i style="background:#FF5F56"></i>
+            <i style="background:#FFBD2E"></i>
+            <i style="background:#27C93F"></i>
+            <span>SignBridge-AI</span>
+          </div>
+          <div class="pv sb">
+            <div><b>98.65%</b><small>Test Accuracy</small></div>
+            <div><b>0.07ms</b><small>Inference</small></div>
+            <div><b>12</b><small>ASL Signs</small></div>
+            <div><b>100%</b><small>On-device</small></div>
+          </div>
+          <div class="pi">
+            <div class="chips"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>MediaPipe</span></div>
+            <h3>SignBridge AI — ارتباط با زبان اشاره</h3>
+            <p>تشخیص لحظه‌ای زبان اشاره ASL با وب‌کم، ساخت جمله و تبدیل به گفتار؛ پردازش هوش مصنوعی تماماً درون مرورگر.</p>
+            <div class="pl">
+              <a class="btn bp sm" href="https://sadegh-rasouli.github.io/SignBridge-AI/" target="_blank"
+                rel="noopener">مستندات ↗</a>
+              <a class="btn bo sm" href="https://github.com/sadegh-rasouli/SignBridge-AI" target="_blank"
+                rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pc" data-tilt="5">
+          <div class="bar">
+            <i style="background:#FF5F56"></i>
+            <i style="background:#FFBD2E"></i>
+            <i style="background:#27C93F"></i>
+            <span>digikala-store</span>
+          </div>
+          <div class="pv">
+            <iframe loading="lazy" title="Store preview" sandbox="allow-scripts allow-same-origin"
+              data-src="https://sadegh-rasouli.github.io/digikala-store/"></iframe>
+          </div>
+          <div class="pi">
+            <div class="chips"><span>E-commerce</span><span>RTL</span><span>JavaScript</span></div>
+            <h3>فروشگاه اینترنتی (پروژه تمرینی)</h3>
+            <p>پیاده‌سازی رابط کاربری فروشگاه آنلاین فارسی راست‌به‌چپ با دسته‌بندی محصولات، تخفیف‌ها و چیدمان ریسپانسیو.</p>
+            <div class="pl">
+              <a class="btn bp sm" href="https://sadegh-rasouli.github.io/digikala-store/" target="_blank"
+                rel="noopener">مشاهده سایت ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pc" data-tilt="5">
+          <div class="bar">
+            <i style="background:#FF5F56"></i>
+            <i style="background:#FFBD2E"></i>
+            <i style="background:#27C93F"></i>
+            <span>sign-language-translator</span>
+          </div>
+          <div class="pv">
+            <iframe loading="lazy" title="Translator preview" sandbox="allow-scripts allow-same-origin"
+              data-src="https://sadegh-rasouli.github.io/sign-language-translator/"></iframe>
+          </div>
+          <div class="pi">
+            <div class="chips"><span>MediaPipe</span><span>ML</span><span>JavaScript</span></div>
+            <h3>مترجم زبان اشاره</h3>
+            <p>تشخیص حروف ASL با دوربین با کمک MediaPipe Hands و شبکه عصبی سبک؛ بدون ارسال تصویر به سرور خارجی.</p>
+            <div class="pl">
+              <a class="btn bp sm" href="https://sadegh-rasouli.github.io/sign-language-translator/" target="_blank"
+                rel="noopener">امتحان کن ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="rv">
+    <div class="wrap">
+      <div class="sh">
+        <div class="eb"><i></i>خدمات</div>
+        <h2>چه خدماتی برای شما انجام می‌دهم؟</h2>
+        <p class="lede">سه پکیج استاندارد برای شروع همکاری؛ هر پروژه پس از مشاوره رایگان برآورد دقیق زمان و هزینه می‌شود.</p>
+      </div>
+      <div class="pk">
+        <div class="card" data-tilt="5">
+          <h3>صفحه معرفی / لندینگ</h3>
+          <p class="pr">قیمت ویژه همکاری‌های اول</p>
+          <ul class="ck">
+            <li>یک صفحه ریسپانسیو و مدرن</li>
+            <li>لینک‌های ارتباطی تلگرام و واتساپ</li>
+            <li>فرم تماس و استعلام فعال</li>
+            <li>سئوی پایه و سرعت بارگذاری فوق‌العاده</li>
+          </ul>
+          <p class="tm">زمان تحویل: حدود ۳ تا ۵ روز</p>
+          <a class="btn bo" href="#contact">درخواست این پکیج</a>
+        </div>
+        <div class="card hot" data-tilt="5">
+          <h3>سایت شرکتی</h3>
+          <p class="pr">قیمت ویژه همکاری‌های اول</p>
+          <ul class="ck">
+            <li>تا ۵ صفحه (درباره ما، خدمات، پروژه‌ها، تماس و...)</li>
+            <li>نمایش گالری و نمونه‌کارها</li>
+            <li>فرم ارتباط با مشتری و اتصال به پیام‌رسان‌ها</li>
+            <li>سئوی تکنیکال و امنیت بالا</li>
+          </ul>
+          <p class="tm">زمان تحویل: حدود ۷ تا ۱۴ روز</p>
+          <a class="btn bp" href="#contact">درخواست این پکیج</a>
+        </div>
+        <div class="card" data-tilt="5">
+          <h3>سایت با کاتالوگ محصول</h3>
+          <p class="pr">قیمت ویژه همکاری‌های اول</p>
+          <ul class="ck">
+            <li>کاتالوگ محصولات با دسته‌بندی و فیلتر</li>
+            <li>فرم ثبت استعلام قیمت و سفارش</li>
+            <li>ساختار سئومحور برای جذب مشتری از گوگل</li>
+            <li>مناسب کارخانه‌ها و شرکت‌های بازرگانی B2B</li>
+          </ul>
+          <p class="tm">زمان تحویل: حدود ۱۴ تا ۲۱ روز</p>
+          <a class="btn bo" href="#contact">درخواست این پکیج</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process & FAQ Section -->
+  <section id="process" class="rv">
+    <div class="wrap">
+      <div class="sh">
+        <div class="eb"><i></i>روند کار</div>
+        <h2>از اولین پیام تا تحویل سایت</h2>
+      </div>
+      <div class="stp">
+        <div class="card">
+          <span class="mono">01</span>
+          <h3>مشاوره رایگان</h3>
+          <p>درباره کسب‌وکار، رقبا و هدف شما گفت‌وگو می‌کنیم و برآورد زمان و هزینه ارائه می‌دهم.</p>
+        </div>
+        <div class="card">
+          <span class="mono">02</span>
+          <h3>طراحی رابط کاربری</h3>
+          <p>ساختار و ظاهر سایت هماهنگ با هویت بصری برند آماده و با تأیید شما نهایی می‌شود.</p>
+        </div>
+        <div class="card">
+          <span class="mono">03</span>
+          <h3>توسعه و بهینه‌سازی</h3>
+          <p>سایت با کدنویسی تمیز پیاده‌سازی و روی انواع گوشی، تبلت و لپ‌تاپ تست می‌شود.</p>
+        </div>
+        <div class="card">
+          <span class="mono">04</span>
+          <h3>تحویل و پشتیبانی</h3>
+          <p>سایت روی هاست و دامنه شما منتشر می‌شود و آموزش کار با آن به همراه پشتیبانی رایگان داده می‌شود.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <h2 style="font-size:24px;margin-bottom:10px">سوالات متداول</h2>
+        <details>
+          <summary>برای شروع چه مواردی از من نیاز است؟</summary>
+          <p>معرفی کوتاه کسب‌وکار، لوگو، تصاویر و در صورت وجود نمونه سایت‌هایی که می‌پسندید. مابقی مراحل فنی با من است.</p>
+        </details>
+        <details>
+          <summary>تهیه دامنه و هاست چگونه است؟</summary>
+          <p>در تمام مراحل انتخاب بهترین هاست و ثبت دامنه راهنمایی کامل دریافت می‌کنید و کانفیگ‌ها به رایگان انجام می‌شود.</p>
+        </details>
+        <details>
+          <summary>نحوه تسویه حساب چگونه است؟</summary>
+          <p>پس از توافق، درصدی به عنوان پیش‌پرداخت برای شروع کار و مابقی بعد از مشاهده و تأیید نهایی سایت پرداخت می‌شود.</p>
+        </details>
+        <details>
+          <summary>آیا پس از تحویل هم پشتیبانی وجود دارد؟</summary>
+          <p>بله، هرگونه باگ و ایراد فنی بدون هزینه رفع می‌شود و برای افزودن قابلیت‌های آتی همیشه در دسترس خواهم بود.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="rv">
+    <div class="wrap">
+      <div class="sh noprint"
+        style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+        <div>
+          <div class="eb"><i></i>رزومه</div>
+          <h2>رزومه کاری من</h2>
+        </div>
+        <button class="btn bp" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          دانلود نسخه PDF (Print / Save)
+        </button>
+      </div>
+      <div class="res">
+        <h3>Mohammad Sadegh Rasouli</h3>
+        <div class="rl">Web Developer | Computer Engineering Student</div>
+        <p><small>Isfahan, Iran · sadeghdev006@gmail.com · 0930 035 2533 · t.me/Sadegh_rasoulii · github.com/sadegh-rasouli ·
+            linkedin.com/in/mohammad-sadegh-rasouli-dev</small></p>
+        <p>I design and develop modern websites with a focus on functionality, performance, responsive design, and user
+          experience. My work combines structured development practices with a practical understanding of business
+          needs, helping turn ideas into reliable digital solutions.</p>
+
+        <h4>About</h4>
+        <p>Computer Engineering student focused on web development and software engineering, with a particular interest
+          in building digital products that address real business needs. I build responsive interfaces, organize
+          application structure, and create clear, intuitive user experiences, valuing code quality and maintainability.
+        </p>
+
+        <h4>Technical Skills</h4>
+        <div class="two">
+          <ul>
+            <li><b>Web:</b> HTML5 &amp; Semantic Markup, CSS3, Responsive Design, UI Implementation</li>
+            <li><b>Programming:</b> JavaScript, Python, C / C++</li>
+            <li><b>Backend &amp; DB:</b> Node.js &amp; Express (REST API), MongoDB &amp; Mongoose</li>
+          </ul>
+          <ul>
+            <li><b>SEO &amp; Quality:</b> On-Page SEO, Semantic HTML, Accessibility, Metadata, Performance</li>
+            <li><b>Tools:</b> Git &amp; GitHub, VS Code, Vite &amp; npm</li>
+            <li><b>Focus:</b> Business Websites, Product Catalogs, Inquiry Forms</li>
+          </ul>
+        </div>
+
+        <h4>Selected Projects</h4>
+        <ul>
+          <li><b>NOVA B2B Platform</b> — SEO-oriented industrial polymer supplier website.</li>
+          <li><b>SignBridge AI</b> — real-time ASL recognition (React, TypeScript, FastAPI, MediaPipe); 98.65% test
+            accuracy on a 12-sign vocabulary.</li>
+          <li><b>Sign Language Translator</b> — in-browser ASL letter recognition (MediaPipe Hands + lightweight neural
+            network).</li>
+          <li><b>Online Store UI</b> — RTL e-commerce interface (practice project).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="rv">
+    <div class="wrap">
+      <div class="box">
+        <div class="cg">
+          <div>
+            <div class="eb"><i></i>شروع همکاری</div>
+            <h2>پروژه‌ای در ذهن دارید؟</h2>
+            <p class="lede">توضیح کوتاهی بنویسید یا از طریق راه‌های زیر مستقیم پیام دهید؛ معمولاً ظرف ۲۴ ساعت پاسخ می‌دهم.</p>
+
+            <div class="qc">
+              <!-- Telegram Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="https://t.me/Sadegh_rasoulii" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="#38bdf8">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+                  </svg>
+                  <span class="qc-label mono">@Sadegh_rasoulii</span>
+                </a>
+                <button class="copy-btn" data-copy="@Sadegh_rasoulii" data-label="آیدی تلگرام" title="کپی آیدی تلگرام" aria-label="کپی آیدی تلگرام">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- WhatsApp Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="https://wa.me/989300352533" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="#4ade80">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.78C8.86 6.78 8.64 6.85 8.44 7.07C8.24 7.29 7.68 7.81 7.68 8.87C7.68 9.93 8.45 10.96 8.56 11.11C8.67 11.26 10.08 13.43 12.24 14.36C12.75 14.58 13.15 14.72 13.46 14.82C13.98 14.98 14.45 14.96 14.82 14.9C15.24 14.84 16.11 14.38 16.29 13.87C16.47 13.36 16.47 12.92 16.41 12.83C16.35 12.74 16.2 12.69 15.98 12.58C15.76 12.47 14.69 11.94 14.49 11.87C14.29 11.8 14.14 11.76 14 11.98C13.86 12.2 13.45 12.69 13.33 12.83C13.21 12.97 13.09 13 12.87 12.89C12.65 12.78 11.94 12.54 11.1 11.79C10.45 11.21 10.01 10.49 9.89 10.28C9.77 10.06 9.88 9.94 9.99 9.83C10.09 9.73 10.21 9.57 10.32 9.44C10.43 9.31 10.47 9.22 10.54 9.08C10.61 8.94 10.58 8.82 10.53 8.71C10.48 8.6 10.07 7.59 9.9 7.18C9.73 6.78 9.56 6.83 9.43 6.82C9.31 6.82 9.17 6.78 9.04 6.78Z"/>
+                  </svg>
+                  <span class="qc-label mono">0930 035 2533</span>
+                </a>
+                <button class="copy-btn" data-copy="09300352533" data-label="شماره واتساپ" title="کپی شماره واتساپ" aria-label="کپی شماره واتساپ">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Phone Call Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="tel:+989300352533">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span class="qc-label mono">تماس تلفنی</span>
+                </a>
+                <button class="copy-btn" data-copy="09300352533" data-label="شماره تماس" title="کپی شماره تماس" aria-label="کپی شماره تماس">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Email Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="mailto:sadeghdev006@gmail.com">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#C792EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span class="qc-label mono">ایمیل مستقیم</span>
+                </a>
+                <button class="copy-btn" data-copy="sadeghdev006@gmail.com" data-label="آدرس ایمیل" title="کپی ایمیل" aria-label="کپی ایمیل">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- LinkedIn Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="https://www.linkedin.com/in/mohammad-sadegh-rasouli-dev/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="#60a5fa">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                  <span class="qc-label">پروفایل LinkedIn</span>
+                </a>
+              </div>
+
+              <!-- GitHub Card -->
+              <div class="qc-card">
+                <a class="qc-info" href="https://github.com/sadegh-rasouli" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="#E6E8EE">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                  </svg>
+                  <span class="qc-label">گیت‌هاب سورس‌ها</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <form id="cf" action="https://formspree.io/f/xrpzpdzn" method="POST">
+            <label>نام و نام خانوادگی</label>
+            <input name="name" required placeholder="مثلاً: رضا محمدی">
+
+            <label>ایمیل یا شماره تماس</label>
+            <input name="contact" required placeholder="آیدی تلگرام، شماره واتساپ یا ایمیل">
+
+            <label>نوع پروژه</label>
+            <select name="type">
+              <option>سایت شرکتی / معرفی</option>
+              <option>فروشگاهی / کاتالوگ محصول</option>
+              <option>صفحه فرود (Landing Page)</option>
+              <option>سایر موارد</option>
+            </select>
+
+            <label>توضیحات کوتاه پروژه</label>
+            <textarea name="message" rows="3" required placeholder="کمی درباره پروژه یا نیاز کسب‌وکارتان بنویسید..."></textarea>
+
+            <input type="hidden" name="_subject" value="پیام جدید از پورتفولیو">
+            <button class="btn bp" type="submit">ارسال درخواست همکاری</button>
+            <p id="fs" style="margin-top:10px;font-size:13.5px;display:none"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap fr">
+      <span>© 2026 Mohammad Sadegh Rasouli · طراحی و توسعه با کدهای استاندارد</span>
+      <span class="mono">HTML5 · CSS3 · Vanilla JS</span>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span id="toastText">کپی شد!</span>
+  </div>
+
+  <!-- Dual Floating CTA Buttons (Telegram & WhatsApp) -->
+  <div class="fab-container">
+    <a class="fab fab-tg" href="https://t.me/Sadegh_rasoulii" target="_blank" rel="noopener" aria-label="پیام در تلگرام">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .37z"/>
+      </svg>
+      <span>تلگرام</span>
+    </a>
+    <a class="fab fab-wa" href="https://wa.me/989300352533" target="_blank" rel="noopener" aria-label="پیام در واتساپ">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.78C8.86 6.78 8.64 6.85 8.44 7.07C8.24 7.29 7.68 7.81 7.68 8.87C7.68 9.93 8.45 10.96 8.56 11.11C8.67 11.26 10.08 13.43 12.24 14.36C12.75 14.58 13.15 14.72 13.46 14.82C13.98 14.98 14.45 14.96 14.82 14.9C15.24 14.84 16.11 14.38 16.29 13.87C16.47 13.36 16.47 12.92 16.41 12.83C16.35 12.74 16.2 12.69 15.98 12.58C15.76 12.47 14.69 11.94 14.49 11.87C14.29 11.8 14.14 11.76 14 11.98C13.86 12.2 13.45 12.69 13.33 12.83C13.21 12.97 13.09 13 12.87 12.89C12.65 12.78 11.94 12.54 11.1 11.79C10.45 11.21 10.01 10.49 9.89 10.28C9.77 10.06 9.88 9.94 9.99 9.83C10.09 9.73 10.21 9.57 10.32 9.44C10.43 9.31 10.47 9.22 10.54 9.08C10.61 8.94 10.58 8.82 10.53 8.71C10.48 8.6 10.07 7.59 9.9 7.18C9.73 6.78 9.56 6.83 9.43 6.82C9.31 6.82 9.17 6.78 9.04 6.78Z"/>
+      </svg>
+      <span>واتساپ</span>
+    </a>
+  </div>
+
+</body>
+
+</html>
