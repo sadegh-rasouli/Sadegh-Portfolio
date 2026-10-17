@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sadegh-rasouli.github.io/Sadegh-Portfolio/sitemap.xml
+Sitemap: https://sadeghrasouli.ir/sitemap.xml
